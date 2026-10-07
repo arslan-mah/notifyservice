@@ -1,0 +1,35 @@
+{
+  "name": "notification-bridge",
+  "version": "1.0.0",
+  "description": "Lightweight Windows Notification Bridge that forwards toast notifications to ntfy",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc && npm run build:listener",
+    "build:listener": "dotnet publish win-listener/WinListener.csproj -c Release -o win-listener/publish",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test-notification": "tsx src/scripts/test-notification.ts",
+    "discover-apps": "tsx src/scripts/discover-apps.ts",
+    "dump-notifications": "tsx src/scripts/dump-notifications.ts",
+    "install-service": "tsx src/scripts/install-service.ts",
+    "uninstall-service": "tsx src/scripts/uninstall-service.ts"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "pino": "^9.6.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.8"
+  }
+}

@@ -1,0 +1,12 @@
+node_modules/
+dist/
+logs/
+data/
+.env
+*.log
+win-listener/bin/
+win-listener/obj/
+win-listener/publish/
+.DS_Store
+Thumbs.db
+*.tsbuildinfo
